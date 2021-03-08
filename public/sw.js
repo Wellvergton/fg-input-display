@@ -1,11 +1,11 @@
 const cacheName = "pg-input-display-v1";
 const shellFiles = [
-  "assets/css/fontawesome.min.css",
-  "assets/css/regular.min.css",
-  "assets/css/solid.min.css",
-  "build/bundle.css",
-  "build/bundle.js",
-  "global.css",
+  "/assets/css/fontawesome.min.css",
+  "/assets/css/regular.min.css",
+  "/assets/css/solid.min.css",
+  "/build/bundle.css",
+  "/build/bundle.js",
+  "/global.css",
 ];
 
 self.addEventListener("install", (event) => {
