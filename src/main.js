@@ -4,10 +4,9 @@ import App from "./App.svelte";
 import axesHandler from "./handlers/axesHandler";
 import buttonsHandler from "./handlers/buttonsHandler.js";
 
-let gamepads;
+let choosenPad;
 let cfg;
 
-connectedGamepads.subscribe((value) => (gamepads = value));
 config.subscribe((value) => (cfg = value));
 
 const app = new App({
@@ -15,9 +14,11 @@ const app = new App({
 });
 
 function showInputs() {
-  if (gamepads[cfg.choosenPad]) {
-    buttonsHandler(gamepads[cfg.choosenPad].buttons);
-    axesHandler(gamepads[cfg.choosenPad].axes);
+  choosenPad = navigator.getGamepads()[cfg.choosenPad];
+
+  if (choosenPad) {
+    buttonsHandler(choosenPad.buttons);
+    axesHandler(choosenPad.axes);
   }
 
   requestAnimationFrame(showInputs);
