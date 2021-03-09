@@ -5,7 +5,6 @@
   import FrameLimitInput from "./FrameLimitInput.svelte";
   import OrientationSelect from "./OrientationSelect.svelte";
 
-  const options = [LayoutSelect, FrameLimitInput, OrientationSelect];
   const dispatch = createEventDispatcher();
 
   function close() {
@@ -26,15 +25,15 @@
       </button>
       <span>Settings</span>
     </div>
-    {#each options as option}
-      <div class="option">
-        {#if option.name === "LayoutSelect"}
-          <LayoutSelect on:show-mapper />
-        {:else}
-          <svelte:component this={option} />
-        {/if}
-      </div>
-    {/each}
+    <div class="option">
+      <LayoutSelect on:show-mapper />
+    </div>
+    <div class="option">
+      <FrameLimitInput />
+    </div>
+    <div class="option">
+      <OrientationSelect />
+    </div>
   </div>
 </div>
 
