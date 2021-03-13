@@ -25,7 +25,6 @@ function createConfig() {
     subscribe,
     setLayout: function (layout, numberOfButtons) {
       update((cfg) => {
-        console.log(cfg);
         cfgCopy = Object.assign({}, cfg);
         cfgCopy.buttonsLayout = layout;
         cfgCopy.maxButtonIndex = numberOfButtons;
