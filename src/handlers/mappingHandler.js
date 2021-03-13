@@ -18,14 +18,16 @@ function notify() {
   callbacks.forEach((callback) => callback());
 }
 
+let handling;
+
 function handleInputs() {
   gamepad = navigator.getGamepads()[choosenPad];
 
-  requestAnimationFrame(handleInputs);
+  handling = requestAnimationFrame(handleInputs);
 
   for (let i = 0; i < gamepad.buttons.length; i++) {
     if (gamepad.buttons[i].pressed) {
-      cancelAnimationFrame(handleInputs);
+      cancelAnimationFrame(handling);
       currentMapping[i] = buttonForMapping;
       notify();
       break;
@@ -41,6 +43,7 @@ function setButtonForMapping(value) {
 function onFinishMapping() {
   moves.clear();
   mapping.save(Object.assign({}, currentMapping));
+  currentMapping = {};
 }
 
 export default {
