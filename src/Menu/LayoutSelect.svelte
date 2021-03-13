@@ -64,6 +64,7 @@
   .col.selected {
     border: 2px solid cyan;
     border-radius: 6px;
+    outline: none;
   }
 
   button {
