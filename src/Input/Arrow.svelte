@@ -13,6 +13,6 @@
   }
 
   .rotate {
-    transform: rotate(-45deg);
+    transform: rotate(45deg);
   }
 </style>
