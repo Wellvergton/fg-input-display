@@ -1,5 +1,6 @@
 <script>
   import { config } from "../stores/config.js";
+  import { moves } from "../stores/moves.js";
   import { createEventDispatcher } from "svelte";
   import onKeypress from "../res/onKeyboardSelect.js";
   import FourButtonsCross from "../Input/FourButtonsCross.svelte";
@@ -18,6 +19,7 @@
   function onSelect(layout) {
     let numberOfButtons = layout === "sixButtons" ? 6 : 4;
     config.setLayout(layout, numberOfButtons);
+    moves.clear();
   }
 </script>
 
