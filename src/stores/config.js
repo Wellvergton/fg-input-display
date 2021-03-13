@@ -57,6 +57,16 @@ function createConfig() {
         return cfgCopy;
       });
     },
+    setSelectedGamepad: function (index) {
+      update((cfg) => {
+        cfgCopy = Object.assign({}, cfg);
+        cfgCopy.choosenPad = index;
+
+        saveInLocalStorage(cfgCopy);
+
+        return cfgCopy;
+      });
+    },
   };
 }
 

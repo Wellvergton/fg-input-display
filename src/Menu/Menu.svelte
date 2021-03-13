@@ -1,8 +1,10 @@
 <script>
+  import { connectedGamepads } from "../stores/connectedGamepads.js";
   import { createEventDispatcher } from "svelte";
   import { fade, fly } from "svelte/transition";
-  import LayoutSelect from "./LayoutSelect.svelte";
   import FrameLimitInput from "./FrameLimitInput.svelte";
+  import LayoutSelect from "./LayoutSelect.svelte";
+  import GamepadSelect from "./GamepadSelect.svelte";
   import OrientationSelect from "./OrientationSelect.svelte";
 
   const dispatch = createEventDispatcher();
@@ -25,6 +27,11 @@
       </button>
       <span>Settings</span>
     </div>
+    {#if Object.keys($connectedGamepads).length > 1}
+      <div class="option">
+        <GamepadSelect />
+      </div>
+    {/if}
     <div class="option">
       <LayoutSelect on:show-mapper />
     </div>
