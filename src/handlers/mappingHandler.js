@@ -19,9 +19,7 @@ function notify() {
 }
 
 function handleInputs() {
-  if (!gamepad) {
-    gamepad = navigator.getGamepads()[choosenPad];
-  }
+  gamepad = navigator.getGamepads()[choosenPad];
 
   requestAnimationFrame(handleInputs);
 
