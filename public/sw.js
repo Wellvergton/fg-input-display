@@ -1,4 +1,4 @@
-const cacheName = "pg-input-display-v1";
+const cacheName = "pg-input-display-v1.0.1";
 const shellFiles = [
   "/assets/css/fontawesome.min.css",
   "/assets/css/regular.min.css",

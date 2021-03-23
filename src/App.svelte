@@ -96,8 +96,13 @@
     flex-direction: row-reverse;
   }
 
-  .horizontal .inputs {
+  .inputs {
     display: flex;
+    align-items: center;
+  }
+
+  .vertical .inputs {
+    flex-flow: column;
   }
 
   .input-wraper {
@@ -123,7 +128,7 @@
 
   .horizontal .settings {
     width: 100vw;
-    justify-content: flex-end;
+    justify-content: flex-start;
   }
 
   .vertical .settings {
