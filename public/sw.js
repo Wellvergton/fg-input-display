@@ -1,4 +1,4 @@
-const cacheName = "pg-input-display-v1.0.1";
+const cacheName = "pg-input-display-v1.0.2";
 const shellFiles = [
   "/assets/css/fontawesome.min.css",
   "/assets/css/regular.min.css",
@@ -36,6 +36,24 @@ self.addEventListener("fetch", (event) => {
       cache.put(event.request, response.clone());
 
       return response;
+    })()
+  );
+});
+
+self.addEventListener("activate", (event) => {
+  event.waitUntil(
+    (async () => {
+      const keyList = await caches.keys();
+
+      await Promise.all(
+        keyList.map(async (key) => {
+          if (key === cacheName) {
+            return;
+          }
+
+          await caches.delete(key);
+        })
+      );
     })()
   );
 });
