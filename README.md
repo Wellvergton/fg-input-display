@@ -12,7 +12,7 @@ A simple [PWA](https://en.wikipedia.org/wiki/Progressive_web_application) to sho
 - Offline support
 - Installable on Chrome (Install and use as a native app)
 
-Acess on: [fginputdisplay.web.app/](fginputdisplay.web.app/)
+Access on: [fginputdisplay.web.app/](fginputdisplay.web.app/)
 
 ![alt text](./resources/1.png)
 
